@@ -1,0 +1,50 @@
+<craft>
+	<parameter name="size" type="int" default="1"/>
+	<parameter name="width" type="int" default="6"/>
+	<parameter name="height" type="int" default="1"/>
+	<script type="text/openjscad">
+
+	function main(params) {
+		var size = params.size;
+	    var width = params.width;
+	    var height = params.height;
+
+	    if (width < 5)
+	        width = 5;
+
+	    return union(
+	        base(),
+	        border()
+	    ).scale([size, size, height]);
+
+	    // button components
+	    function base(params) {
+	        // parts
+	        var center = cylinder({
+	            r: width / 2,
+	            h: 1
+	        });
+	        var hole = cylinder({
+	            r: width / 12,
+	            h: 1
+	        });
+
+	        // transformations
+	        var hole_1 = hole.translate([-width / 6, width / 6, 0]);
+	        var hole_2 = hole.translate([width / 6, width / 6, 0]);
+	        var hole_3 = hole.translate([-width / 6, -width / 6, 0]);
+	        var hole_4 = hole.translate([width / 6, -width / 6, 0]);
+	        
+	        return difference(center, hole_1, hole_2, hole_3, hole_4);
+	    }
+
+	    function border(params) {
+	        return torus({
+	            ri: 1,
+	            ro: width / 2,
+	            fni: 6
+	        }).translate([0, 0, 0.5]);
+	    }
+	}
+	</script>
+</craft>
