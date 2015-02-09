@@ -1,9 +1,9 @@
-# craft-button
+# craft-button-calebhsu
 
 Parameterized button model.
 
 ### Install
-	$ npm install craft-button
+	$ npm install craft-button-calebhsu
 
 ### Parameters
 - size: scales model
