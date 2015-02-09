@@ -13,9 +13,11 @@ Parameterized button model.
 ### Example
 ```html
 <craft>
-	<craft name="button" module="craft-button"/>
-	<button size="2"></button>
-	<button width="15" height="2"></button>
+	<craft name="button" module="craft-button-calebhsu"/>
+	<button size="3"></button>
+	<button width="10" height="3"></button>
 	<button></button>
 </craft>
 ```
+
+![example](example.png)
