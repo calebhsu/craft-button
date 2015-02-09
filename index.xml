@@ -20,6 +20,7 @@
 		    // button components
 		    function base() {
 		    	var center, hole, hole1, hole2, hole3, hole4;
+		    	
 		        // parts
 		        center = cylinder({
 		            r: width / 2,
