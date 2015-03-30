@@ -6,7 +6,6 @@ Parameterized button model.
     $ npm install craft-button-calebhsu
 
 ### Parameters
-- size: scales model
 - width: adjusts width of button
 - height: adjusts thickness of button
 
@@ -15,7 +14,9 @@ Parameterized button model.
 <craft>
     <craft name="button" module="calebhsu/craft-button"/>
     <row>
-        <button size="3"></button>
+        <scale factor="3">
+            <button></button>
+        </scale>
         <button width="10" height="3"></button>
         <button></button>
     </row>
