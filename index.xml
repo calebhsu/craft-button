@@ -1,53 +1,47 @@
 <craft>
-	<parameter name="size" type="int" default="1"/>
-	<parameter name="width" type="int" default="6"/>
-	<parameter name="height" type="int" default="1"/>
-	<script type="text/openjscad">
+    <parameter name="width" type="int" default="6"/>
+    <parameter name="height" type="int" default="1"/>
+    
+    <group>
+        <!-- Base -->
+        <script type="text/openjscad">
+    
+            function main() {
+                if (params.width < 5)
+                    params.width = 5;
+    
+                var center, hole, hole1, hole2, hole3, hole4;
+                
+                // parts
+                center = cylinder({
+                    r: params.width / 2,
+                    h: params.height
+                });
+                hole = cylinder({
+                    r: params.width / 12,
+                    h: params.height
+                });
+    
+                // transformations
+                hole1 = hole.translate([-params.width / 6, params.width / 6, 0]);
+                hole2 = hole.translate([params.width / 6, params.width / 6, 0]);
+                hole3 = hole.translate([-params.width / 6, -params.width / 6, 0]);
+                hole4 = hole.translate([params.width / 6, -params.width / 6, 0]);
+                
+                return difference(center, hole1, hole2, hole3, hole4);
+            }
+        </script>
+        
+        <!-- Border -->
+        <script type="text/openjscad">
+            function main() {
+                return torus({
+                    ri: 1,
+                    ro: params.width / 2,
+                    fni: 6
+                }).translate([0, 0, 0.5]).scale([1, 1, params.height]);
+            }
+        </script>
+    </group>
 
-		function main() {
-			var size = params.size;
-		    var width = params.width;
-		    var height = params.height;
-
-		    if (width < 5)
-		        width = 5;
-
-		    return union(
-		        base(),
-		        border()
-		    ).scale(size);
-
-		    // button components
-		    function base() {
-		    	var center, hole, hole1, hole2, hole3, hole4;
-		    	
-		        // parts
-		        center = cylinder({
-		            r: width / 2,
-		            h: height
-		        });
-		        hole = cylinder({
-		            r: width / 12,
-		            h: height
-		        });
-
-		        // transformations
-		        hole1 = hole.translate([-width / 6, width / 6, 0]);
-		        hole2 = hole.translate([width / 6, width / 6, 0]);
-		        hole3 = hole.translate([-width / 6, -width / 6, 0]);
-		        hole4 = hole.translate([width / 6, -width / 6, 0]);
-		        
-		        return difference(center, hole1, hole2, hole3, hole4);
-		    }
-
-		    function border() {
-		        return torus({
-		            ri: 1,
-		            ro: width / 2,
-		            fni: 6
-		        }).translate([0, 0, 0.5]).scale([1, 1, height]);
-		    }
-		}
-		
-	</script>
 </craft>

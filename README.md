@@ -3,7 +3,7 @@
 Parameterized button model.
 
 ### Install
-	$ npm install craft-button-calebhsu
+    $ npm install craft-button-calebhsu
 
 ### Parameters
 - size: scales model
@@ -13,10 +13,12 @@ Parameterized button model.
 ### Example
 ```html
 <craft>
-	<craft name="button" module="craft-button-calebhsu"/>
-	<button size="3"></button>
-	<button width="10" height="3"></button>
-	<button></button>
+    <craft name="button" module="calebhsu/craft-button"/>
+    <row>
+        <button size="3"></button>
+        <button width="10" height="3"></button>
+        <button></button>
+    </row>
 </craft>
 ```
 
