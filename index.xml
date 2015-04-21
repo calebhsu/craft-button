@@ -3,10 +3,9 @@
     <parameter name="height" type="int" default="1"/>
     
     <group>
-        <!-- Base -->
-        <script type="text/openjscad">
-    
+        <script>
             function main() {
+                // Base
                 if (params.width < 5)
                     params.width = 5;
     
@@ -31,10 +30,10 @@
                 return difference(center, hole1, hole2, hole3, hole4);
             }
         </script>
-        
-        <!-- Border -->
-        <script type="text/openjscad">
+
+        <script>
             function main() {
+                // Border
                 return torus({
                     ri: 1,
                     ro: params.width / 2,
