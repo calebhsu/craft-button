@@ -2,7 +2,7 @@
     <parameter name="width" type="int" default="6"/>
     <parameter name="height" type="int" default="1"/>
     
-    <group>
+    <group align="x50 y50 z50" color="teal">
         <script>
             function main() {
                 // Base
