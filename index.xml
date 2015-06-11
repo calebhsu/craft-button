@@ -3,34 +3,20 @@
     <parameter name="height" type="int" default="1"/>
     
     <group align="x50 y50 z50" color="teal">
-        <script>
-            function main() {
-                // Base
-                if (params.width < 5)
-                    params.width = 5;
-    
-                var center, hole, hole1, hole2, hole3, hole4;
-                
-                // parts
-                center = cylinder({
-                    r: params.width / 2,
-                    h: params.height
-                });
-                hole = cylinder({
-                    r: params.width / 12,
-                    h: params.height
-                });
-    
-                // transformations
-                hole1 = hole.translate([-params.width / 6, params.width / 6, 0]);
-                hole2 = hole.translate([params.width / 6, params.width / 6, 0]);
-                hole3 = hole.translate([-params.width / 6, -params.width / 6, 0]);
-                hole4 = hole.translate([params.width / 6, -params.width / 6, 0]);
-                
-                return difference(center, hole1, hole2, hole3, hole4);
-            }
-        </script>
+        <group align="x50 y50" cut=".holes">
+            <column spacing="{{width/6}}" class="holes">
+                <repeat n="4">
+                    <row spacing="{{width/6}}">
+                        <repeat n="2">
+                            <cylinder radius="{{width / 12}}" height="{{height}}"></cylinder>
+                        </repeat>
+                    </row>
+                </repeat>
+            </column>
 
+            <cylinder radius="{{width / 2}}" height="{{height}}"></cylinder>
+        </group>
+        
         <script>
             function main() {
                 // Border
