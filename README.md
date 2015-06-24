@@ -13,10 +13,8 @@ Parameterized button model.
 ```html
 <craft>
     <craft name="button" module="calebhsu/craft-button"/>
-    <row>
-        <scale factor="3">
-            <button></button>
-        </scale>
+    <row spacing="1">
+        <button transform="scale(3,3,3)"></button>
         <button width="10" height="3"></button>
         <button></button>
     </row>

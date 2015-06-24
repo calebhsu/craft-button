@@ -2,20 +2,20 @@
     <parameter name="width" type="int" default="6"/>
     <parameter name="height" type="int" default="1"/>
     
-    <group align="x50 y50 z50" color="teal">
-        <group align="x50 y50" cut=".holes">
-            <column spacing="{{width/6}}" class="holes">
-                <repeat n="4">
+    <g layout="centerXYZ()" color="teal">
+        <g layout="centerXYZ()" cut=".holes">
+            <col spacing="{{width/6}}" class="holes">
+                <repeat n="2">
                     <row spacing="{{width/6}}">
                         <repeat n="2">
                             <cylinder radius="{{width / 12}}" height="{{height}}"></cylinder>
                         </repeat>
                     </row>
                 </repeat>
-            </column>
+            </col>
 
             <cylinder radius="{{width / 2}}" height="{{height}}"></cylinder>
-        </group>
+        </g>
         
         <script>
             function main() {
@@ -27,6 +27,6 @@
                 }).translate([0, 0, 0.5]).scale([1, 1, params.height]);
             }
         </script>
-    </group>
+    </g>
 
 </craft>
