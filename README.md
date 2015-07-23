@@ -2,8 +2,13 @@
 
 Parameterized button model.
 
-### Install
-    $ npm install craft-button-calebhsu
+### Usage
+```html
+<craft>
+    <craft name="button" module="craft-button-calebhsu"/>
+    <button></button>
+</craft>
+```
 
 ### Parameters
 - width: adjusts width of button
@@ -12,10 +17,10 @@ Parameterized button model.
 ### Example
 ```html
 <craft>
-    <craft name="button" module="calebhsu/craft-button"/>
-    <row spacing="1">
-        <button transform="scale(3,3,3)"></button>
-        <button width="10" height="3"></button>
+    <craft name="button" module="craft-button-calebhsu"/>
+     <row spacing="1">
+        <button transform="scale(2 2 2)"></button>
+        <button width="10" height="2"></button>
         <button></button>
     </row>
 </craft>
