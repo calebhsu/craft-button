@@ -14,10 +14,10 @@
                 </repeat>
             </col>
 
-            <cylinder radius="{{width / 2}}" height="{{height}}"></cylinder>
+            <cylinder radius="{{width / 2}}" height="{{height}}"/>
         </g>
         
-        <script>
+        <script type="text/openjscad">
             function main() {
                 // Border
                 return torus({
